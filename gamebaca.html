@@ -1,0 +1,48 @@
+<!-- story_completion.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Completion</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', sans-serif;
+            background-color: #ffefd5;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Complete the Story</h1>
+<p id="story"></p>
+<input type="text" id="userInput" placeholder="Finish the story!" />
+<button onclick="checkCompletion()">Submit</button>
+<p id="feedback"></p>
+
+<script>
+    const storyStart = "Once upon a time in a magical forest, there lived a ";
+    const correctEnd = "friendly dragon who loved to help others.";
+    
+    document.getElementById('story').innerText = storyStart;
+
+    function checkCompletion() {
+        const userAnswer = document.getElementById('userInput').value.trim();
+        if (userAnswer.toLowerCase() === correctEnd.toLowerCase()) {
+            document.getElementById('feedback').innerText = "Great job! 🎉 You completed the story!";
+        } else {
+            document.getElementById('feedback').innerText = "Not quite! Try again!";
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!-- volcano_experiment.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volcano Eruption</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', sans-serif;
+            background-color: #ffefd5;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        #volcano {
+            width: 200px;
+            height: 100px;
+            background-color: brown;
+            margin: 0 auto;
+            position: relative;
+        }
+        #lava {
+            width: 50%;
+            height: 0;
+            background-color: red;
+            position: absolute;
+            bottom: 100%;
+            left: 25%;
+            transition: height 1s;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Volcano Eruption!</h1>
+<div id="volcano">
+    <div id="lava"></div>
+</div>
+<button onclick="erupt()">Erupt!</button>
+
+<script>
+    function erupt() {
+        const lava = document.getElementById('lava');
+        lava.style.height = '50px'; // Erupting lava
+        setTimeout(() => {
+            lava.style.height = '0'; // Reset lava
+        }, 2000); // Reset after 2 seconds
+    }
+</script>
+
+</body>
+</html>
